@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { TextEntry } from "./text-entry";
+import Container from "./container";
 
 export default class Ask extends Component {
   state = {
@@ -18,18 +19,18 @@ export default class Ask extends Component {
 
     if (submitted) {
       return (
-        <div style={{ textAlign: "center", width: "500px", margin: "0 auto" }}>
+        <Container>
           <h1 style={{ margin: "1rem 0" }}>Power Up</h1>
           <p style={{ margin: "1rem 0" }}>Thank you!</p>
           <button style={{ margin: "1rem 0" }} className="button" onClick={this.onAskAnother}>
             Ask Another
           </button>
-        </div>
+        </Container>
       );
     }
 
     return (
-      <div style={{ textAlign: "center", width: "500px", margin: "0 auto" }}>
+      <Container>
         <h1 style={{ margin: "1rem 0" }}>Ask Us Anything</h1>
         <p style={{ margin: "1rem 0" }}>
           Ask the design students a question. Be specific!<br />
@@ -44,7 +45,7 @@ export default class Ask extends Component {
           autoFocus={true}
           onSubmit={this.onSubmit}
         />
-      </div>
+      </Container>
     );
   }
 }
