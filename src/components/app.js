@@ -9,6 +9,9 @@ import store from "../store";
 import WithPassword from "./with-password";
 import Nav from "./nav";
 
+import PageTransition from "./page-transition";
+import PageWrapper from "./page-wrapper";
+
 // create-react-app uses package.json's homepage field to configure the path for assets, so use the
 // same URL to figure out the basename for the router
 const isDev = process.env.NODE_ENV === "development";
@@ -25,23 +28,28 @@ export default class App extends React.Component {
     return (
       <BrowserRouter basename={basename}>
         <div>
-          <div className="background" />
           <Nav />
-          <div className="container">
-            <Switch>
-              <Route path="/ask" render={() => <Ask store={store} />} />
-              <Route
-                path="/answer"
-                render={() => (
-                  <WithPassword store={store}>
-                    <Answer store={store} />
-                  </WithPassword>
-                )}
-              />
-              <Route path="/wall" render={() => <Wall store={store}>Wall!</Wall>} />
-              <Redirect to="/ask" />
-            </Switch>
-          </div>
+          <Route
+            render={({ location }) => (
+              <PageWrapper>
+                <PageTransition pageKey={location.pathname}>
+                  <Switch location={location}>
+                    <Route path="/ask" render={() => <Ask store={store} />} />
+                    <Route
+                      path="/answer"
+                      render={() => (
+                        <WithPassword store={store}>
+                          <Answer store={store} />
+                        </WithPassword>
+                      )}
+                    />
+                    <Route path="/wall" render={() => <Wall store={store}>Wall!</Wall>} />
+                    <Redirect to="/ask" />
+                  </Switch>
+                </PageTransition>
+              </PageWrapper>
+            )}
+          />
         </div>
       </BrowserRouter>
     );

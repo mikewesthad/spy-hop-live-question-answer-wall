@@ -1,7 +1,6 @@
 @import "../../style/variables.scss";
 
 .nav {
-  margin-bottom: 10rem;
   text-align: center;
   font-family: $font-primary;
   font-weight: 700;
@@ -9,6 +8,11 @@
   color: $text-color-dark;
   width: 100vw;
   font-size: 0.8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: $nav-height;
 }
 
 .navLink {

@@ -1,0 +1,15 @@
+@import "../../style/variables.scss";
+
+.wrap {
+  // Force size to be centered, while leaving room for the nav
+  min-width: 100vw;
+  min-height: calc(100vh - #{2 * $nav-height});
+  margin-top: $nav-height;
+
+  // Center contents
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}

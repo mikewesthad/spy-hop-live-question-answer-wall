@@ -20,6 +20,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-textarea-autosize": "^7.0.3",
+    "react-transition-group": "^2.4.0",
     "typeface-montserrat": "0.0.54",
     "vinyl-fs": "^3.0.3",
     "vinyl-ftp": "^0.6.1"

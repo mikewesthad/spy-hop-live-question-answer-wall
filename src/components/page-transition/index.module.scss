@@ -1,0 +1,42 @@
+@import "../../style/variables.scss";
+
+$transitionDurationMs: 500;
+$enterTransitionDelayMs: 700;
+
+body {
+  overflow-x: hidden;
+}
+
+:export {
+  enterDurationMs: $transitionDurationMs + $enterTransitionDelayMs;
+  exitDurationMs: $transitionDurationMs;
+}
+
+.enter {
+  opacity: 0;
+}
+
+.enterActive {
+  transition: opacity #{$transitionDurationMs}ms ease-out #{$enterTransitionDelayMs}ms,
+    transform #{$transitionDurationMs}ms ease-out #{$enterTransitionDelayMs}ms;
+  opacity: 1;
+}
+
+.exit {
+  position: absolute; /* TODO: isn't fully correct - need to fix margin collapse */
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: calc(100vh - #{2 * $nav-height});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Stop interactivity on fading page */
+  opacity: 1;
+}
+
+.exitActive {
+  transition: opacity #{$transitionDurationMs}ms ease-in,
+    transform #{$transitionDurationMs}ms ease-in;
+  opacity: 0;
+}
