@@ -7,9 +7,7 @@ import Answer from "./answer";
 import store from "../store";
 import WithPassword from "./with-password";
 import Nav from "./nav";
-
 import PageTransition from "./page-transition";
-import PageWrapper from "./page-wrapper";
 
 // create-react-app uses package.json's homepage field to configure the path for assets, so use the
 // same URL to figure out the basename for the router
