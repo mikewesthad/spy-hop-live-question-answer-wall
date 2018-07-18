@@ -3,7 +3,7 @@
 @import "./variables.scss";
 
 #root {
-  overflow: auto; // Prevent margin collapsing on body
+  padding-top: 1px; // Prevent margin collapsing on body
 }
 
 html {
