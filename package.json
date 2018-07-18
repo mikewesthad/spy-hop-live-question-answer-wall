@@ -1,0 +1,43 @@
+{
+  "name": "spy-hop",
+  "version": "0.1.0",
+  "private": true,
+  "prettier": {
+    "printWidth": 100
+  },
+  "dependencies": {
+    "date-fns": "^1.29.0",
+    "dotenv": "^6.0.0",
+    "emoji-mart": "^2.6.1",
+    "firebase": "^5.2.0",
+    "minimist": "^1.2.0",
+    "mobx": "^5.0.3",
+    "mobx-react": "^5.2.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-app-rewire-mobx": "^1.0.8",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "react-textarea-autosize": "^7.0.3",
+    "typeface-montserrat": "0.0.54",
+    "vinyl-fs": "^3.0.3",
+    "vinyl-ftp": "^0.6.1"
+  },
+  "homepage": "https://www.convergencedesignlab.org/web-resources/power-up",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject",
+    "clean": "rm -rf ./build",
+    "push-ftp": "node ./scripts/push-ftp.js --src ./build/** --dest /usr/home/convergence/public_html/convergencedesignlab.org/web-resources/power-up",
+    "deploy": "npm run clean && npm run build && npm run push-ftp"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.2",
+    "react-app-rewire-css-modules": "github:codebandits/react-app-rewire-css-modules",
+    "react-app-rewired": "^1.5.2",
+    "sass-loader": "^7.0.3"
+  }
+}
