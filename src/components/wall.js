@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import Thread from "./thread";
+import Container from "./container";
 
 @observer
 export default class Wall extends Component {
@@ -17,21 +18,23 @@ export default class Wall extends Component {
     }
 
     return (
-      <ul>
-        {entries.map(([key, threadData], i) => {
-          const isFirst = i === 0;
-          return (
-            <li
-              key={key}
-              style={{
-                marginTop: isFirst ? 0 : "3rem"
-              }}
-            >
-              <Thread {...threadData} className="thread" />
-            </li>
-          );
-        })}
-      </ul>
+      <Container>
+        <ul>
+          {entries.map(([key, threadData], i) => {
+            const isFirst = i === 0;
+            return (
+              <li
+                key={key}
+                style={{
+                  marginTop: isFirst ? 0 : "3rem"
+                }}
+              >
+                <Thread {...threadData} />
+              </li>
+            );
+          })}
+        </ul>
+      </Container>
     );
   }
 }

@@ -2,8 +2,13 @@
 @import "./reset.scss";
 @import "./variables.scss";
 
+body {
+  overflow-x: hidden;
+}
+
 #root {
-  padding-top: 1px; // Prevent margin collapsing on body
+  border-top: 1px solid rgba(255, 255, 255, 0); // Prevent margin collapsing on body
+  position: relative; // For transitions
 }
 
 html {
@@ -101,42 +106,6 @@ textarea {
 textarea:focus {
   border: 2px solid #009aed;
 }
-
-.thread {
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-  border-color: #dcdbd7;
-}
-
-.thread--active .question,
-.thread--active .answer {
-  border-color: #009aed;
-}
-
-.question,
-.answer {
-  background: #ffffff;
-  border-radius: 2px;
-  display: block;
-  position: relative;
-  padding: 2rem;
-  border: 2px solid #dcdbd7;
-  margin: 0 auto;
-  text-align: left;
-}
-
-/* .answer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 0;
-  height: 0;
-  transform: translate(-100%, -50%);
-  border-style: solid;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-} */
 
 .container {
   max-width: 800px;

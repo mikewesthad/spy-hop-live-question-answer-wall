@@ -1,0 +1,47 @@
+@import "../../style/variables.scss";
+
+.thread {
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  border-color: #dcdbd7;
+  width: 600px;
+  text-align: left;
+}
+
+.thread--active .question,
+.thread--active .answer {
+  border-color: #009aed;
+}
+
+.message {
+  background: #ffffff;
+  border-radius: 2px;
+  display: block;
+  position: relative;
+  padding: 2rem;
+  border: 2px solid #dcdbd7;
+  width: 100%;
+}
+
+.messageRight {
+  margin-left: 50px;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  color: $text-color-light;
+}
+
+/* .answer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-100%, -50%);
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+} */

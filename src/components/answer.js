@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import Thread from "./thread";
+import Thread, { MessageBox } from "./thread";
 import { TextEntry } from "./text-entry";
 
 @observer
@@ -58,20 +58,15 @@ export default class Answer extends Component {
                   marginTop: isFirst ? 0 : "3rem"
                 }}
               >
-                <Thread {...threadData} className={isSelected ? "thread--active" : "thread"} />
+                <Thread {...threadData} />
                 {isSelected && (
-                  <div style={{ width: "650px", margin: "0 auto" }}>
-                    <div
-                      className="answer"
-                      style={{ width: "600px", marginLeft: "50px", borderTop: "none" }}
-                    >
-                      <TextEntry
-                        maxCharacters={280}
-                        submitText="Submit"
-                        onSubmit={this.submitAnswer}
-                      />
-                    </div>
-                  </div>
+                  <MessageBox pullRight={true} showTopBorder={false}>
+                    <TextEntry
+                      maxCharacters={280}
+                      submitText="Submit"
+                      onSubmit={this.submitAnswer}
+                    />
+                  </MessageBox>
                 )}
               </li>
             );
