@@ -1,5 +1,6 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import PageWrapper from "../page-wrapper";
 import style from "./index.module.scss";
 
 const classNameMap = {
@@ -22,6 +23,27 @@ const timeout = {
 const scrollToTop = () => window.scrollTo(0, 0);
 
 export default function PageTransition({ pageKey, children }) {
+  // const debug = {
+  //   onEnter: () => {
+  //     console.log(pageKey + " enter");
+  //   },
+  //   onEntering: () => {
+  //     console.log(pageKey + " entering");
+  //   },
+  //   onEntered: () => {
+  //     console.log(pageKey + " entered");
+  //   },
+  //   onExit: () => {
+  //     console.log(pageKey + " exit");
+  //   },
+  //   onExiting: () => {
+  //     console.log(pageKey + " exiting");
+  //   },
+  //   onExited: () => {
+  //     console.log(pageKey + " exited");
+  //   }
+  // };
+
   return (
     <TransitionGroup component={null}>
       <CSSTransition
@@ -30,7 +52,9 @@ export default function PageTransition({ pageKey, children }) {
         classNames={classNameMap}
         onExited={scrollToTop}
       >
-        <div style={{ width: "100%" }}>{children}</div>
+        <div>
+          <PageWrapper>{children}</PageWrapper>
+        </div>
       </CSSTransition>
     </TransitionGroup>
   );

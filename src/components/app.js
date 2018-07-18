@@ -30,23 +30,21 @@ export default class App extends React.Component {
           <Nav />
           <Route
             render={({ location }) => (
-              <PageWrapper>
-                <PageTransition pageKey={location.pathname}>
-                  <Switch location={location}>
-                    <Route path="/ask" render={() => <Ask store={store} />} />
-                    <Route
-                      path="/answer"
-                      render={() => (
-                        <WithPassword store={store}>
-                          <Answer store={store} />
-                        </WithPassword>
-                      )}
-                    />
-                    <Route path="/wall" render={() => <Wall store={store}>Wall!</Wall>} />
-                    <Redirect to="/ask" />
-                  </Switch>
-                </PageTransition>
-              </PageWrapper>
+              <PageTransition pageKey={location.pathname}>
+                <Switch location={location}>
+                  <Route path="/ask" render={() => <Ask store={store} />} />
+                  <Route
+                    path="/answer"
+                    render={() => (
+                      <WithPassword store={store}>
+                        <Answer store={store} />
+                      </WithPassword>
+                    )}
+                  />
+                  <Route path="/wall" render={() => <Wall store={store}>Wall!</Wall>} />
+                  <Redirect to="/ask" />
+                </Switch>
+              </PageTransition>
             )}
           />
         </div>
