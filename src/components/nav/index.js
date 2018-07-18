@@ -7,13 +7,13 @@ export default class Nav extends Component {
     return (
       <nav className={style.nav}>
         <NavLink className={style.navLink} to="/ask" activeClassName={style.navLinkActive}>
-          Ask a Question
+          Ask
         </NavLink>
         <NavLink className={style.navLink} to="/wall" activeClassName={style.navLinkActive}>
-          See All Questions
+          See All
         </NavLink>
         <NavLink className={style.navLink} to="/answer" activeClassName={style.navLinkActive}>
-          Answer a Question
+          Answer
         </NavLink>
       </nav>
     );

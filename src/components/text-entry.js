@@ -75,7 +75,7 @@ export class TextEntry extends Component {
         >
           {charCount} / {maxCharacters}
         </div>
-        <input className="button" disabled={!isValid} type="submit" value={submitText} />
+        <input className="button" style={{fontSize: "1.1rem"}} disabled={!isValid} type="submit" value={submitText} />
       </form>
     );
   }

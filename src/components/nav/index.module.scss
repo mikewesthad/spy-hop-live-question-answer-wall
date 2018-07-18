@@ -4,7 +4,6 @@
   text-align: center;
   font-family: $font-primary;
   font-weight: 700;
-  font-size: 0.9rem;
   color: $text-color-dark;
   width: 100vw;
   font-size: 0.8rem;
@@ -16,8 +15,9 @@
 }
 
 .navLink {
+  font-size: 0.9rem;
   padding: 1.25rem 0 0.3rem 0;
-  margin: 0 1.25rem;
+  margin: 0 1.5rem;
   display: inline-block;
   vertical-align: middle;
   flex: 0 0 33.3%;

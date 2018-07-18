@@ -20,8 +20,8 @@ export default class Ask extends Component {
     if (submitted) {
       return (
         <Container>
-          <h1 style={{ margin: "1rem 0" }}>Power Up</h1>
-          <p style={{ margin: "1rem 0" }}>Thank you!</p>
+          <h1 style={{ margin: "1rem 0", fontSize: "2rem" }}>Power Up</h1>
+          <p style={{ margin: "1rem 0", fontSize: "1.1rem" }}>Thank you!</p>
           <button style={{ margin: "1rem 0" }} className="button" onClick={this.onAskAnother}>
             Ask Another
           </button>
@@ -31,8 +31,8 @@ export default class Ask extends Component {
 
     return (
       <Container>
-        <h1 style={{ margin: "1rem 0" }}>Ask Us Anything</h1>
-        <p style={{ margin: "1rem 0" }}>
+        <h1 style={{ margin: "1rem 0", fontSize: "2rem" }}>Power Up</h1>
+        <p style={{ margin: "1rem 0", fontSize: "1.1rem" }}>
           Ask the design students a question. Be specific!<br />
           <br />For example, you can ask about choices made, processes used, skills developed,
           lessons learned, etc.

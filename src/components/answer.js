@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import Thread, { MessageBox } from "./thread";
 import { TextEntry } from "./text-entry";
+import Container from "./container";
 
 @observer
 export default class Answer extends Component {
@@ -42,8 +43,8 @@ export default class Answer extends Component {
     }
 
     return (
-      <div>
-        <p style={{ textAlign: "center", margin: "1rem 0 2rem 0" }}>
+      <Container>
+        <p style={{ textAlign: "center", margin: "0 0 2rem 0" }}>
           Click on a thread to add an answer.
         </p>
         <ul>
@@ -72,7 +73,7 @@ export default class Answer extends Component {
             );
           })}
         </ul>
-      </div>
+      </Container>
     );
   }
 }
