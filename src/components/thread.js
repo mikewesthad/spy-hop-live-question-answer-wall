@@ -1,10 +1,6 @@
 import React from "react";
 import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
 
-function Timestamp(timestamp) {
-  const diff = Date.now() - timestamp;
-}
-
 export default function Thread({ question, answers, ...otherProps }) {
   const entries = answers ? Object.entries(answers) : [];
 
@@ -24,22 +20,20 @@ export default function Thread({ question, answers, ...otherProps }) {
         </div>
       </li>
       {entries.map(([key, answer], i) => {
-        const isFirst = i === 0;
-        const isLast = i === entries.length - 1;
+        //const isFirst = i === 0;
+        //const isLast = i === entries.length - 1;
         const style = {
           width: "600px",
           marginLeft: "50px",
           borderTop: "none"
         };
         console.log(answer.text || answer);
-        {
-          /* if (!isLast) {
+        /* if (!isLast) {
           style.borderTop = "none";
           style.borderBottomColor = "#f7f6f4";
         } else {
           style.borderTop = "none";
         } */
-        }
         return (
           <li style={{ width: "650px", margin: "0 auto", position: "relative" }}>
             <div className="answer" style={style}>

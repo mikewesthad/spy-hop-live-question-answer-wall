@@ -1,5 +1,5 @@
 import firebase from "../utils/firebase";
-import { extendObservable, observable, action, autorun } from "mobx";
+import { observable } from "mobx";
 
 const database = firebase.database();
 

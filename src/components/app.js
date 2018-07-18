@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { observer } from "mobx-react";
-import { NavLink } from "react-router-dom";
 import Ask from "./ask";
 import Wall from "./wall";
 import Answer from "./answer";

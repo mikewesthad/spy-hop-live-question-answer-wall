@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import Thread from "./thread";
-import { TextEntry } from "./text-entry";
 
 @observer
 export default class Wall extends Component {
