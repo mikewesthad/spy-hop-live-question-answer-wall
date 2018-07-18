@@ -3,7 +3,7 @@
 @import "./variables.scss";
 
 #root {
-  overflow: auto; // Prevent margin collapsing
+  overflow: auto; // Prevent margin collapsing on body
 }
 
 html {
@@ -28,26 +28,14 @@ body {
   color: $text-color-dark;
   min-height: 100vh;
   position: relative;
+  background: url("../images/wormz.png") repeat;
+  background-size: 200px auto;
 }
 
 body,
 input,
 textarea {
   font-family: $font-primary;
-}
-
-.background {
-  height: 100%;
-  content: "";
-  background: url("../images/wormz.png") repeat;
-  background-size: 200px auto;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
 }
 
 a.link {
