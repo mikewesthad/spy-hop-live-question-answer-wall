@@ -42,7 +42,7 @@ export default class Ask extends Component {
           minCharacters={1}
           maxCharacters={280}
           submitText="Submit"
-          autoFocus={true}
+          autoFocus={false}
           onSubmit={this.onSubmit}
         />
       </Container>
