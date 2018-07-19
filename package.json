@@ -6,6 +6,7 @@
     "printWidth": 100
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "date-fns": "^1.29.0",
     "dotenv": "^6.0.0",
     "emoji-mart": "^2.6.1",
