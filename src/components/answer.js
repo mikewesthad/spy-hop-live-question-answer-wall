@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
-import Thread, { MessageBox } from "./thread";
-import { TextEntry } from "./text-entry";
+import Thread from "./thread";
 import Container from "./container";
 
 @observer
@@ -20,10 +19,6 @@ export default class Answer extends Component {
   updateAnswer = event => {
     this.setState({ answer: event.target.value });
   };
-
-  handleSubmit(event) {
-    event.preventDefault();
-  }
 
   submitAnswer = answer => {
     const { selected } = this.state;
@@ -56,18 +51,14 @@ export default class Answer extends Component {
                 key={key}
                 onClick={() => this.onSelectThread(key)}
                 style={{
-                  marginTop: isFirst ? 0 : "3rem"
+                  marginTop: isFirst ? 0 : "3rem",
+                  cursor: "pointer"
                 }}
               >
-                <Thread {...threadData} />
-                {isSelected && (
-                  <MessageBox pullRight={true} showTopBorder={false}>
-                    <TextEntry
-                      maxCharacters={280}
-                      submitText="Submit"
-                      onSubmit={this.submitAnswer}
-                    />
-                  </MessageBox>
+                {isSelected ? (
+                  <Thread {...threadData} enableResponse={true} onSubmit={this.submitAnswer} />
+                ) : (
+                  <Thread {...threadData} />
                 )}
               </li>
             );
