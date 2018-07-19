@@ -28,13 +28,14 @@ export default class Answer extends Component {
 
   render() {
     const { selected } = this.state;
-    const { data, hasLoaded } = this.props.store;
+    const { sortedDataEntries, hasLoaded } = this.props.store;
 
     if (!hasLoaded) return <p style={{ textAlign: "center" }}>Loading...</p>;
 
-    const entries = Object.entries(data);
-    if (entries.length === 0) {
-      return <p style={{ textAlign: "center" }}>There are no questions yet.</p>;
+    if (sortedDataEntries.length === 0) {
+      return (
+        <p style={{ textAlign: "center" }}>There are no questions yet. How about asking one?</p>
+      );
     }
 
     return (
@@ -43,7 +44,7 @@ export default class Answer extends Component {
           Click on a thread to add an answer.
         </p>
         <ul>
-          {entries.map(([key, threadData], i) => {
+          {sortedDataEntries.map(([key, threadData], i) => {
             const isSelected = key === selected;
             const isFirst = i === 0;
             return (

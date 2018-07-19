@@ -6,12 +6,11 @@ import Container from "./container";
 @observer
 export default class Wall extends Component {
   render() {
-    const { data, hasLoaded } = this.props.store;
+    const { sortedDataEntries, hasLoaded } = this.props.store;
 
     if (!hasLoaded) return <p style={{ textAlign: "center" }}>Loading...</p>;
 
-    const entries = Object.entries(data);
-    if (entries.length === 0) {
+    if (sortedDataEntries.length === 0) {
       return (
         <p style={{ textAlign: "center" }}>There are no questions yet. How about asking one?</p>
       );
@@ -20,7 +19,7 @@ export default class Wall extends Component {
     return (
       <Container>
         <ul>
-          {entries.map(([key, threadData], i) => {
+          {sortedDataEntries.map(([key, threadData], i) => {
             const isFirst = i === 0;
             return (
               <li
