@@ -18,6 +18,10 @@
   width: 100%;
   text-align: left;
   // white-space: pre-wrap; // Could come back and enable white space
+
+  // Prevent long words from overflowing
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .question {
