@@ -17,8 +17,9 @@ class Store {
     this.hasLoaded = true;
   };
 
+  // Returns a firebase promise
   addNewQuestion(questionText) {
-    database
+    return database
       .ref()
       .push()
       .set({
@@ -29,8 +30,9 @@ class Store {
       });
   }
 
+  // Returns a firebase promise
   addNewAnswer(questionKey, answerText) {
-    firebase
+    return firebase
       .database()
       .ref(questionKey + "/answers")
       .push({

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { observer } from "mobx-react";
 import Ask from "./ask";
 import Wall from "./wall";
-import Answer from "./answer";
+import AnswerWall from "./answer-wall";
 import store from "../store";
 import WithPassword from "./with-password";
 import Nav from "./nav";
@@ -34,12 +34,12 @@ export default class App extends React.Component {
                   <Route
                     path="/answer"
                     render={() => (
-                      <WithPassword store={store}>
-                        <Answer store={store} />
+                      <WithPassword>
+                        <AnswerWall store={store} />
                       </WithPassword>
                     )}
                   />
-                  <Route path="/wall" render={() => <Wall store={store}>Wall!</Wall>} />
+                  <Route path="/wall" render={() => <Wall store={store} />} />
                   <Redirect to="/ask" />
                 </Switch>
               </PageTransition>

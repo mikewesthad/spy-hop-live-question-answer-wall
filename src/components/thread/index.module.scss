@@ -10,7 +10,6 @@
 
 .message {
   background: white;
-  border-radius: 2px;
   display: block;
   position: relative;
   padding: 1rem;
@@ -38,6 +37,7 @@
   position: relative;
   top: -3px;
   left: 0;
+  margin-bottom: -3px; // Account for the -3px relative offset
 }
 
 .answer {
@@ -80,6 +80,32 @@
   margin-bottom: 0.25rem;
   color: $text-color-light;
   font-style: normal;
+}
+
+.replyBox {
+  display: inline-block;
+  width: initial;
+
+  background: white;
+  border-radius: 2px;
+  position: relative;
+  top: -3px;
+  margin-bottom: -3px;
+  padding: 0.5rem;
+  border: 3px solid #dcdbd7;
+  border-top: 0;
+
+  // Divider between responses
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #dcdbd7;
+    opacity: 0.5;
+  }
 }
 
 // http://ilikepixels.co.uk/drop/bubbler/

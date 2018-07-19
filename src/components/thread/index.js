@@ -4,6 +4,18 @@ import classNames from "classnames";
 import { TextEntry } from "../text-entry";
 import style from "./index.module.scss";
 
+function ReplyBox({ onClick }) {
+  return (
+    <div style={{ textAlign: "right" }}>
+      <div className={style.replyBox}>
+        <button onClick={onClick} className="button">
+          Reply
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function ResponseBox({ onSubmit, ...props }) {
   const classes = classNames(style.answer, style.answerLast);
   return (
@@ -44,18 +56,25 @@ function Answer({ timestamp, text, isLast, ...props }) {
   );
 }
 
-export default function Thread({ question, answers, enableResponse, onSubmit, ...otherProps }) {
+export default function Thread({
+  question,
+  answers,
+  showReplyButton,
+  showReplyForm,
+  onReplyClick,
+  onSubmit,
+  ...otherProps
+}) {
   const entries = answers ? Object.entries(answers) : [];
 
   return (
     <div className={style.thread} {...otherProps}>
       <Question {...question} />
       {entries.map(([key, answer], i) => {
-        return (
-          <Answer key={key} {...answer} isLast={!enableResponse && i === entries.length - 1} />
-        );
+        return <Answer key={key} {...answer} isLast={!showReplyForm && i === entries.length - 1} />;
       })}
-      {enableResponse && <ResponseBox onSubmit={onSubmit} />}
+      {showReplyForm && <ResponseBox onSubmit={onSubmit} />}
+      {showReplyButton && <ReplyBox onClick={onReplyClick} />}
     </div>
   );
 }

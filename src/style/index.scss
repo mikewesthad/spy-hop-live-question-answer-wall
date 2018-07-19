@@ -2,6 +2,20 @@
 @import "./reset.scss";
 @import "./variables.scss";
 
+.test {
+  // Divider between responses
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #dcdbd7;
+    opacity: 0.5;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -45,19 +59,21 @@ textarea {
   font-family: $font-primary;
 }
 
-a.link {
+.link {
   transition: 0.2s ease;
   color: #009aed;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-a.link:visited {
+.link:visited {
   color: #009aed;
 }
 
-a.link:hover {
+.link:hover {
   color: #0080c5;
 }
-a.link:active {
+.link:active {
   color: #0070ac;
 }
 
@@ -69,6 +85,7 @@ a.link:active {
   padding: 0.5rem 1rem;
   border-radius: 2px;
   transition: 0.2s ease;
+  cursor: pointer;
 }
 
 .button:disabled {

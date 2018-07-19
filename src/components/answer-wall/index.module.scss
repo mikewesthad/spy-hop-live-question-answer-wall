@@ -1,0 +1,21 @@
+@import "../../style/variables.scss";
+
+.refreshToast {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  background: white;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  z-index: 10000;
+  border: 3px solid $color-primary;
+  border-bottom: 0;
+  width: 100%;
+  max-width: 20rem;
+  transition: 0.2s ease;
+}
+
+.hide {
+  transform: translate(-50%, 100%);
+}
