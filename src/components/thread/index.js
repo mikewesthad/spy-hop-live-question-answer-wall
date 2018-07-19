@@ -42,8 +42,8 @@ export default function Thread({ question, answers, ...otherProps }) {
       </li>
       {entries.map(([key, answer], i) => {
         return (
-          <li>
             <Answer {...answer} />
+          <li key={key}>
           </li>
         );
       })}
