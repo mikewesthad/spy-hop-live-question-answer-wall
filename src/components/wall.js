@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import Thread from "./thread";
 import Container from "./container";
+import Loading from "./loading";
 
 @observer
 export default class Wall extends Component {
   render() {
     const { sortedDataEntries, hasLoaded } = this.props.store;
 
-    if (!hasLoaded) return <p style={{ textAlign: "center" }}>Loading...</p>;
+    if (!hasLoaded) return <Loading />;
 
     if (sortedDataEntries.length === 0) {
       return (
-        <p style={{ textAlign: "center" }}>There are no questions yet. How about asking one?</p>
+        <Container>
+          <p>There are no questions yet. How about asking one?</p>
+        </Container>
       );
     }
 
