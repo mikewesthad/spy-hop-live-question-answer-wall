@@ -75,7 +75,7 @@ export default class EditableThreads extends Component {
           {renderData.map(([key, threadData], i) => {
             const isSelected = key === selected;
             return (
-              <li key={key}>
+              <li className={style.threadContainer} key={key}>
                 {isSelected ? (
                   <Thread
                     {...threadData}

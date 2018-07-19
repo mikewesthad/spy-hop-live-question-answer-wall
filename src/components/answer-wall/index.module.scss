@@ -19,3 +19,11 @@
 .hide {
   transform: translate(-50%, 100%);
 }
+
+.threadContainer {
+  margin-bottom: 3rem;
+}
+
+.threadContainer:last-child {
+  margin-bottom: 0;
+}
