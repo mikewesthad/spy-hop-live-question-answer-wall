@@ -1,8 +1,19 @@
 import React from "react";
 import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
+import differenceInDays from "date-fns/difference_in_days";
+import format from "date-fns/format";
 import classNames from "classnames";
 import { TextEntry } from "../text-entry";
 import style from "./index.module.scss";
+
+function formatTimestamp(timestamp, type = "question") {
+  const prefix = type.match(/question/i) ? "Asked" : "Answered";
+  if (differenceInDays(Date.now(), timestamp) > 1) {
+    return `${prefix} at ${format(timestamp, "MMM Do YY, hh:mma")}`;
+  } else {
+    return `${prefix} ${distanceInWordsToNow(timestamp)} ago`;
+  }
+}
 
 function ReplyBox({ onClick }) {
   return (
@@ -38,7 +49,7 @@ function MessageBox({ children, className, ...otherProps }) {
 function Question({ timestamp, text }) {
   return (
     <MessageBox className={style.question}>
-      <div className={style.timestamp}>Asked {distanceInWordsToNow(timestamp)} ago</div>
+      <div className={style.timestamp}>{formatTimestamp(timestamp, "question")}</div>
       <div className={style.text}>{text}</div>
     </MessageBox>
   );
@@ -49,7 +60,7 @@ function Answer({ timestamp, text, isLast, ...props }) {
   return (
     <div className={style.answerWrapper}>
       <MessageBox className={classes}>
-        <div className={style.timestamp}>Answered {distanceInWordsToNow(timestamp)} ago</div>
+        <div className={style.timestamp}>{formatTimestamp(timestamp, "answer")}</div>
         <div className={style.text}>{text}</div>
       </MessageBox>
     </div>
